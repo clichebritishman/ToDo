@@ -1,0 +1,55 @@
+@TaskManagement_HostAddress = https://localhost:7022
+
+GET {{TaskManagement_HostAddress}}/Task/GetAll
+
+###
+
+GET {{TaskManagement_HostAddress}}/Task/GetAll?status=0
+
+###
+
+GET {{TaskManagement_HostAddress}}/Task/GetAll?status=1
+
+###
+
+POST {{TaskManagement_HostAddress}}/Task/Create
+Content-Type: application/json
+
+{
+  "title": "Start Work 34",
+  "description": "Start working on the project 2123",
+  "status": 0
+}
+
+
+###
+
+POST {{TaskManagement_HostAddress}}/Task/Create
+Content-Type: application/json
+
+{
+  "title": "Start Work 1232",
+  "description": "Start working on the project 1232",
+  "status": 0
+}
+
+###
+
+POST {{TaskManagement_HostAddress}}/Task/Create
+Content-Type: application/json
+
+{
+  "title": "Start Work asd2",
+  "description": "Start working on the project as2",
+  "status": 1
+}
+
+###
+
+@id=1
+@status=2
+PATCH {{TaskManagement_HostAddress}}/task/{{id}}/{{status}}
+Content-Type: application/json
+
+
+###
